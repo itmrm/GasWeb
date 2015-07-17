@@ -62,7 +62,7 @@ public class CarInsert extends HttpServlet {
 		}
 		if(pump <= pumps && pump >= 1) {
 			ClientCar car = new ClientCar(liters, wash, pump);
-			nextSite = (client.sendACar(car) ? nextSite : "webError.html");
+			nextSite = (client.sendACar(car) ? nextSite : "webError.html"); //if the the car sent to the server.
 			String encodedURL = response.encodeRedirectURL(nextSite);
 	        response.sendRedirect(encodedURL);
 		}
